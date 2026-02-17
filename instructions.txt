@@ -1,0 +1,79 @@
+CatPairs memory game : GUI Edition
+
+Program author
+Name: Markus Savvakis
+Student number: H291753
+UserID: snmasa
+E-Mail: markus.savvakis@tuni.fi
+
+2021 Markus Savvakis
+
+~BONUS FEATURES AT THE END OF THIS TEXT DOCUMENT~
+# I noticed that on my vncviewer virtual desktop the items for some reason don't fit as well as on my Windows, it might be because of
+# the low resolution of the virtual desktop, so I hope you can test the program on your own PC so it works as intended :)
+
+Thank you for checking out my CatPairs game!
+
+This is a game where you can select the number of players from 2 to 20,
+and the number of cards from 1 (why would you) to 20.
+You can also name yourselves! If you don't want to, you will get 
+generic Player 1, Player 2, etc. names.
+When you have chosen the number of players, cards and your names, you can start the game.
+
+The game will have a square-shaped grid where the buttons will be placed as nicely
+as possible, but they won't always fill the whole area. It's not possible 
+to insert 10 cards into a nice square shape, for example.
+
+Anyways, you can click a card and it will turn and you will see a nice cat picture. Then
+you have to find it's pair. If you don't succeed on the first try, don't worry, The cards
+will turn back after a short delay, and it will be the next players turn. If you do succeed,
+you will get a point, the cards will disappear and you will have another try too!
+
+When you have found all the cards, the game will congratulate you and tell you who's the 
+winner or if there was a tie situation. You can then choose to play another game or quit the game.
+
+You can actually start a new game at all times, except when you have a card open.
+You can quit the game at any time you want.
+
+At all times you can see at the right side a timer that tells you how much time has passed since
+the start of the current game, a text that tells whose turn it is and how many points they have, 
+a text that welcomes you, encourages you and congratulates you :)!
+
+I hope this text was enough to get you started! Have fun!
+For more technical information, keep reading.
+
+The MainWindow is a QT object which contains the neccessary buttons, grids and labels.
+At the beginning of each game, it initializes a GameEngine-object, which then initializes
+the needed amount of player-objects.
+The player objects have names and points, and the GameEngine-object modifies and reads them.
+I used my previous Pairs -project as a template for the Player-class and GameEngine-class.
+
+They are used on the MainWindow to keep track of the points of the players, and of when 
+the last pair has been claimed.
+
+The MainWindow unfortunately combines the use of QT Design and writing the GUI-code manually, as I was bit lost on both
+of those ways. I found it better for me to use QT Design, but for creating just the rigth sized cardbuttons, I had to 
+insert them manually on the grid. All other buttons and labels are created on QT Design, which got a bit cluttered, but
+they're still there.
+
+I feel like the MainWindow is pretty straight-forward, as I lined up the functions in order as they happen and commented
+them well.
+
+There are three different "views", the greetingsBox, which has the introduction and settings for the game, the buttonsBox
+which contains the cardbuttons and where the main game happens, and the congratsBox which comes up when the game is won.
+They call eachother in order and edit themselves to be hidden or visible when neccessary. GameEngine is used when it is 
+useful, but a lot of the programs functionality happens in the GUI as the boxes go so well together.
+
+
+The program is throughoutly commented, so I hope you will find more of the technical details from there.
+
+Extra features for Bonus points:
+-Figures on faces of the cards (20p)
+-Figure on the back of the cards (10p)
+-Variable number of players (10p)
+-New game button shown at all times (10p)
+-Time used so far shown during the game (10p)
+
+Together they are 60p, but maximum is 50p, hope I will get close to 50 at least.
+
+
